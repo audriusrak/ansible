@@ -1,9 +1,7 @@
 - name: test Connection to my servers
   hosts: all
   become: yes    //vietoje -b, sudo teises;
-  
   tasks:
-
- - name: Ping my servers
-   ping:
+    - name: Ping my servers
+      ping:
   
