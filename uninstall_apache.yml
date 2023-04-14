@@ -1,0 +1,13 @@
+---
+- name: uninstall default Apache Web Server
+  hosts: all
+  become: yes
+
+  tasks:
+
+  - name: Stop Apache and Disable it
+    service: name=apache2 state=stopped enabled=no
+
+
+  - name: uninstall Apache Webserver
+    apt: name=apache2 state=absent
