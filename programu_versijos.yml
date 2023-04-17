@@ -1,7 +1,10 @@
+---
 - name: programu_versijos
   hosts: all
   become: yes
   package_facts:
-  - name: Parodyti programu versijas
-    debug:
-      var: ansible_facts.packages
+  tasks:
+  
+- name: rodyti_programu_versijas
+  debug: 
+    var: ansible_facts.packages
