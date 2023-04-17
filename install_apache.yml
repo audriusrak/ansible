@@ -10,6 +10,6 @@
     
   - name: Start Apache and Enable it on the every boot
     service: name=apache2 state=started enabled=yes
-    register: comm_output
- 
-  - debug: var=comm_output.stdout_lines
+    register: my_output
+
+  - debug: var=my_output.stdout_lines
