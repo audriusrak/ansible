@@ -1,4 +1,13 @@
 - name: Get packages
+  hosts: all
+  become: yes
+  
+  shell: dpkg-query -f '${binary:Package}\n' -W
+  register: packages
+
+- name: Print packages
+  debug:
+    msg: "{{ packages.stdout_lines }}"
   shell: dpkg-query -f '${binary:Package}\n' -W
   register: packages
 
