@@ -1,6 +1,6 @@
 ---
- - name: Programu_versijos
-   package_facts:
- - name: Parodyti programu versijas
-    debug:
-     var: ansible_facts.packages
+- name: Programu_versijos
+  package_facts:
+- name: Parodyti programu versijas
+  debug:
+    var: ansible_facts.packages
