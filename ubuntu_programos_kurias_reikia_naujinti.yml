@@ -1,0 +1,13 @@
+---
+- name: list_package_to_update
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: List packages
+    shell: apt upgrade --dry-run
+    register: packages
+
+  - name: Print packages
+    debug:
+      msg: "{{ packages.stdout_lines }}"
