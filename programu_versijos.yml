@@ -1,8 +1,7 @@
----
-- name: programu_versijos
-  hosts: all
-  become: yes
-  package_facts:
-- name: rodyti_programu_versijas
-  debug: 
-    var: ansible_facts.packages
+ - name: programu_versijos
+   hosts: all
+   become: yes
+   package_facts:
+ - name: rodyti_programu_versijas
+   debug: 
+     var: ansible_facts.packages
