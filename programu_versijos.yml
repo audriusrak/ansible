@@ -1,7 +1,7 @@
- - name: programu_versijos
-   hosts: all
-   become: yes
-   package_facts:
- - name: rodyti_programu_versijas
-   debug: 
-     var: ansible_facts.packages
+- name: Get packages
+  shell: dpkg-query -f '${binary:Package}\n' -W
+  register: packages
+
+- name: Print packages
+  debug:
+    msg: "{{ packages.stdout_lines }}"
