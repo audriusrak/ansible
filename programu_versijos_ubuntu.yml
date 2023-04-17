@@ -5,7 +5,7 @@
 
   tasks:
   - name: Get packages
-    shell: dpkg-query -W '${binary:Package}\n' -W
+    shell: dpkg-query -W '${binary:Package}\n' -l
     register: packages
 
   - name: Print packages
