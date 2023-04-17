@@ -1,5 +1,5 @@
 - name: yum_command 
-  apt:
+  ansible.builtin.apt:
     list=installed
   register: apt_packages
 
