@@ -11,3 +11,11 @@
   - name: Print packages
     debug:
       msg: "{{ packages.stdout_lines }}"
+      
+  - name: List packages 2
+    shell:  "dpkg --get-selections | xargs apt-cache policy {} | grep -1 Installed | sed -r 's/(:|Installed: |Candidate: )//' | uniq -u | tac | sed '/--/I,+1 d' | tac | sed '$d' | sed -n 1~2p"
+    register: packages2
+
+  - name: Print packages2
+    debug:
+      msg: "{{ packages2.stdout_lines }}"
