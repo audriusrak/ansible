@@ -1,16 +1,7 @@
-- name: Get packages
-  hosts: all
-  become: yes
-  
-  shell: dpkg-query -f '${binary:Package}\n' -W
-  register: packages
+- name: yum_command 
+  apt:
+    list=installed
+  register: apt_packages
 
-- name: Print packages
-  debug:
-    msg: "{{ packages.stdout_lines }}"
-  shell: dpkg-query -f '${binary:Package}\n' -W
-  register: packages
-
-- name: Print packages
-  debug:
-    msg: "{{ packages.stdout_lines }}"
+- debug:
+    var: apt_packages
