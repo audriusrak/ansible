@@ -3,8 +3,6 @@
   hosts: all
   become: yes
   package_facts:
-  tasks:
-  
 - name: rodyti_programu_versijas
   debug: 
     var: ansible_facts.packages
