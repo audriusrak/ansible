@@ -1,7 +1,7 @@
 - name: yum_command 
   ansible.builtin.apt:
     pkg:
-    list=installed
+    list: installed
     register: apt_packages
 
 - debug:
