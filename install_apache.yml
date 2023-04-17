@@ -8,10 +8,12 @@
     apt: name=apache2 state=latest
     register: my_output
     
-  - debug: var=my_output.stdout_lines
+  - debug:
+      var:my_output.output
     
   - name: Start Apache and Enable it on the every boot
     service: name=apache2 state=started enabled=yes
     register: my_output2
 
-  - debug: var=my_output2.stdout_lines
+  - debug: 
+      var:my_output2.output
